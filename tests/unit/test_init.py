@@ -7,18 +7,18 @@ import shutil
 import setuptools_scm
 
 # Import Pepper Libraries
-import pepper
+import upepper
 
 
 def test_no_setup():
-    setuppath = os.path.join(os.path.dirname(pepper.__file__), os.pardir, 'setup.py')
+    setuppath = os.path.join(os.path.dirname(upepper.__file__), os.pardir, 'setup.py')
     shutil.move(setuppath, setuppath + '.bak')
-    ptest = imp.load_source('ptest', os.path.join(os.path.dirname(pepper.__file__), '__init__.py'))
+    ptest = imp.load_source('ptest', os.path.join(os.path.dirname(upepper.__file__), '__init__.py'))
     shutil.move(setuppath + '.bak', setuppath)
     assert ptest.version == setuptools_scm.get_version()
     assert ptest.sha is None
 
 
 def test_version():
-    assert pepper.version == setuptools_scm.get_version()
-    assert pepper.sha is None
+    assert upepper.version == setuptools_scm.get_version()
+    assert upepper.sha is None

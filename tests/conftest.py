@@ -18,8 +18,8 @@ from pytestskipmarkers.utils import ports
 from saltfactories.utils import random_string, running_username
 
 # Import Pepper libraries
-import pepper
-import pepper.script
+import upepper
+import upepper.script
 
 
 log = logging.getLogger(__name__)
@@ -135,7 +135,7 @@ def pepperconfig(salt_api_port):
 
 @pytest.fixture
 def pepper_client(session_salt_api, salt_api_port):
-    client = pepper.Pepper('http://localhost:{0}'.format(salt_api_port))
+    client = upepper.Pepper('http://localhost:{0}'.format(salt_api_port))
     client.login('pepper', 'pepper', 'sharedsecret')
     return client
 
@@ -176,7 +176,7 @@ def pepper_cli(request, session_salt_api, salt_api_port, output_file, session_ss
 
     def _run_pepper_cli(*args, **kwargs):
         sys.argv = ['pepper', '-p', kwargs.pop('profile', 'main')] + def_args + list(args)
-        exitcode = pepper.script.Pepper()()
+        exitcode = upepper.script.Pepper()()
         try:
             with open(output_file, 'r') as result:
                 try:

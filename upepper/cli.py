@@ -13,8 +13,8 @@ import textwrap
 import time
 
 # Import Pepper Libraries
-import pepper
-from pepper.exceptions import (
+import upepper
+from upepper.exceptions import (
     PepperAuthException,
     PepperArgumentsException,
     PepperException,
@@ -62,7 +62,7 @@ class PepperCli(object):
         return optparse.OptionParser(
             description=__doc__,
             usage='%prog [opts]',
-            version=pepper.__version__)
+            version=upepper.__version__)
 
     def parse(self):
         '''
@@ -662,7 +662,7 @@ class PepperCli(object):
         rootLogger.addHandler(logging.StreamHandler())
         rootLogger.setLevel(max(logging.ERROR - (self.options.verbose * 10), 1))
 
-        api = pepper.Pepper(
+        api = upepper.Pepper(
             self.parse_url(),
             debug_http=self.options.debug_http,
             ignore_ssl_errors=self.options.ignore_ssl_certificate_errors)

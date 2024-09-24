@@ -3,7 +3,7 @@ Pepper is a CLI front-end to salt-api
 '''
 import pkg_resources
 
-from pepper.libpepper import Pepper, PepperException
+from upepper.libpepper import Pepper, PepperException
 
 __all__ = ('__version__', 'Pepper', 'PepperException')
 

@@ -9,10 +9,11 @@ with open("README.rst", "r") as fh:
     long_description = fh.read()
 
 setup_kwargs = {
-    'name': 'salt-pepper',
+    'name': 'upepper',
+    'version': '0.1.3',
     'description': __doc__.strip(),
-    'author': 'Seth House',
-    'author_email': 'shouse@saltstack.com',
+    'author': 'Seth House, Phan Dang',
+    'author_email': 'shouse@saltstack.com, phan.dang@usdatanetworks.com',
     'url': 'http://saltstack.com',
     'long_description': long_description,
     'long_description_content_type': "text/x-rst",
@@ -36,7 +37,7 @@ setup_kwargs = {
         'Topic :: System :: Distributed Computing',
     ],
     'packages': [
-        'pepper',
+        'upepper',
     ],
     'extras_require': {
         'kerberos': ["requests-gssapi>=1.1.0"],

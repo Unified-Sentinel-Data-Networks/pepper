@@ -307,7 +307,7 @@ class Pepper(object):
         '''
         return self.req(path, lowstate)
 
-    def local(self, tgt, fun, arg=None, kwarg=None, expr_form='glob',
+    def local(self, tgt, fun, arg=None, kwarg=None, expr_form='glob',tgt_type=None,
               timeout=None, ret=None):
         '''
         Run a single command using the ``local`` client
@@ -328,6 +328,8 @@ class Pepper(object):
 
         if expr_form:
             low['expr_form'] = expr_form
+        if tgt_type:
+            low['tgt_type'] = tgt_type
 
         if timeout:
             low['timeout'] = timeout

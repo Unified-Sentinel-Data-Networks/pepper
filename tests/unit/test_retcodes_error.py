@@ -4,7 +4,7 @@ from __future__ import absolute_import
 import sys
 
 # Import Pepper Libraries
-import pepper
+import upepper
 
 # Import Testing Libraries
 import pytest
@@ -13,4 +13,4 @@ import pytest
 def test_fail_any():
     sys.argv = ['pepper', '--fail-all', '--fail-any', 'minion_id', 'request']
     with pytest.raises(SystemExit):
-        pepper.script.Pepper()()
+        upepper.script.Pepper()()

@@ -3,7 +3,7 @@ from __future__ import absolute_import
 import sys
 
 # Import Pepper Libs
-import pepper.cli
+import upepper.cli
 
 # Import Testing libraries
 from mock import MagicMock, patch
@@ -19,6 +19,6 @@ def test_interactive_logins():
              'pepper.cli.getpass.getpass',
              MagicMock(return_value='pepper')
          ):
-        result = pepper.cli.PepperCli().get_login_details()
+        result = upepper.cli.PepperCli().get_login_details()
     assert result['SALTAPI_USER'] == 'pepper'
     assert result['SALTAPI_PASS'] == 'pepper'

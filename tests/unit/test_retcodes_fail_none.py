@@ -4,7 +4,7 @@ from __future__ import print_function, unicode_literals, absolute_import
 import sys
 
 # Import Pepper Libraries
-import pepper
+import upepper
 
 from mock import patch, MagicMock
 
@@ -29,7 +29,7 @@ PAYLOAD = {
 @patch('pepper.cli.PepperCli.low', MagicMock(side_effect=lambda api, load: PAYLOAD))
 def test_default():
     sys.argv = ['pepper', 'minion_id', 'request']
-    ret_code = pepper.script.Pepper()()
+    ret_code = upepper.script.Pepper()()
     assert ret_code == 0
 
 
@@ -37,7 +37,7 @@ def test_default():
 @patch('pepper.cli.PepperCli.low', MagicMock(side_effect=lambda api, load: PAYLOAD))
 def test_fail_any():
     sys.argv = ['pepper', '--fail-any', 'minion_id', 'request']
-    ret_code = pepper.script.Pepper()()
+    ret_code = upepper.script.Pepper()()
     assert ret_code == 127
 
 
@@ -45,7 +45,7 @@ def test_fail_any():
 @patch('pepper.cli.PepperCli.low', MagicMock(side_effect=lambda api, load: PAYLOAD))
 def test_fail_any_none():
     sys.argv = ['pepper', '--fail-any-none', 'minion_id', 'request']
-    ret_code = pepper.script.Pepper()()
+    ret_code = upepper.script.Pepper()()
     assert ret_code == 127
 
 
@@ -53,7 +53,7 @@ def test_fail_any_none():
 @patch('pepper.cli.PepperCli.low', MagicMock(side_effect=lambda api, load: PAYLOAD))
 def test_fail_all():
     sys.argv = ['pepper', '--fail-all', 'minion_id', 'request']
-    ret_code = pepper.script.Pepper()()
+    ret_code = upepper.script.Pepper()()
     assert ret_code == 127
 
 
@@ -61,5 +61,5 @@ def test_fail_all():
 @patch('pepper.cli.PepperCli.low', MagicMock(side_effect=lambda api, load: PAYLOAD))
 def test_fail_all_none():
     sys.argv = ['pepper', '--fail-all-none', 'minion_id', 'request']
-    ret_code = pepper.script.Pepper()()
+    ret_code = upepper.script.Pepper()()
     assert ret_code == 127

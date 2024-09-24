@@ -4,7 +4,7 @@ import json
 import sys
 
 # Import Pepper Libraries
-import pepper.cli
+import upepper.cli
 
 # Import Testing Libraries
 from mock import patch, mock_open, MagicMock
@@ -12,7 +12,7 @@ from mock import patch, mock_open, MagicMock
 
 def test_token():
     sys.argv = ['pepper', '*', 'test.ping']
-    client = pepper.cli.PepperCli()
+    client = upepper.cli.PepperCli()
     client.options.mktoken = True
     mock_data = (
         '{"perms": [".*", "@runner", "@wheel", "@jobs"], "start": 1529967752.516165, '

@@ -8,9 +8,9 @@ import sys
 import json
 import logging
 
-from pepper.cli import PepperCli
-from pepper.retcode import PepperRetcode
-from pepper.exceptions import (
+from upepper.cli import PepperCli
+from upepper.retcode import PepperRetcode
+from upepper.exceptions import (
     PepperException,
     PepperAuthException,
     PepperArgumentsException,

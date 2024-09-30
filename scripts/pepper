@@ -4,7 +4,7 @@
 import logging
 
 # Import Pepper Libraries
-import pepper.script
+import upepper.script
 
 try:
     from logging import NullHandler
@@ -18,5 +18,5 @@ logger.addHandler(NullHandler())
 
 
 if __name__ == '__main__':
-    exit_code = pepper.script.Pepper()()
+    exit_code = upepper.script.Pepper()()
     raise SystemExit(exit_code if exit_code is not None else 0)

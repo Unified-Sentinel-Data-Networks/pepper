@@ -9,7 +9,7 @@ import logging
 import re
 import ssl
 
-from pepper.exceptions import PepperException
+from upepper.exceptions import PepperException
 
 try:
     ssl._create_default_https_context = ssl._create_stdlib_context

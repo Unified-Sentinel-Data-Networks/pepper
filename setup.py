@@ -10,7 +10,7 @@ with open("README.rst", "r") as fh:
 
 setup_kwargs = {
     'name': 'upepper',
-    'version': '0.1.3',
+    'version': '0.1.4',
     'description': __doc__.strip(),
     'author': 'Seth House, Phan Dang',
     'author_email': 'shouse@saltstack.com, phan.dang@usdatanetworks.com',
